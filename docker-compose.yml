@@ -1,0 +1,32 @@
+services:
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "9191:9191"
+    environment:
+      - VITE_BACKEND_PATH=http://backend:9090
+      - VITE_LOGIN_TOKEN=login_token
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    ports:
+      - "9090:9090"
+    environment:
+      - DATABASE_URL=postgresql://postgres:ax0svi5qiiwa015j@codertop.com:5432/haha
+      - ACCESS_TOKEN_SECRET=e5675cdcccaf4c5f059733d3323625393c5cbb853b53d66ed1bad5d00207838bb4a8333099d0918535998851ce575f0c8e31ac9344033f7734fca31cc92e3020
+      - TOKEN_EXPIRES_IN=20s
+      - PORT=9090
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,18 @@
+{
+  "user": [
+    {
+      "username": 1,
+      "password": "John Doe"
+    }
+  ],
+  "bcrypt": [
+    {
+      "id": "1",
+      "saltRounds": 7
+    },
+    {
+      "id": "2",
+      "saltRounds": 6
+    }
+  ]
+}

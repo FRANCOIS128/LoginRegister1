@@ -1,0 +1,176 @@
+:root {
+  font-size: 10px;
+  --primary-color: #2c3e50;
+  --second-color: #141c24;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  font-size: 1.6rem;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fontShadow {
+  text-shadow: 0.5px 0.5px 1px;
+}
+
+@mixin smallFontShadow {
+  text-shadow: 0.2px 0.2px 0.2px;
+}
+
+@mixin btnShadow {
+  box-shadow: 2px 2px 5px var(--primary-color);
+}
+
+@mixin btnActiveShadow {
+  box-shadow: inset 0px 0px 3px var(--primary-color);
+}
+
+
+#app {
+  width: 100%;
+  height: 100%;
+  @include flexCenter;
+}
+
+.login,
+.register {
+  width: 100%;
+  height: 100%;
+  @include flexCenter;
+  flex-direction: column;
+}
+
+.login-info,
+.register-info {
+  @include flexCenter;
+  gap: 1rem;
+}
+
+.info {
+  @include flexCenter;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-size: 2rem;
+  line-height: 1em;
+  display: inline-block;
+  @include fontShadow;
+}
+
+input {
+  font-size: 2rem;
+  line-height: 1em;
+  width: 30rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  @include fontShadow;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+input:focus {
+  outline: none;
+  border-style: dashed;
+}
+
+.login-btn,
+.register-btn {
+  font-size: 2rem;
+  border: 2px solid var(--primary-color);
+  padding: 0 3rem;
+  border-radius: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+  @include flexCenter;
+  @include btnShadow;
+  height: 100%;
+}
+
+.login-btn:active,
+.register-btn:active {
+  @include btnActiveShadow
+}
+
+.to-login,
+.to-register {
+  margin: 1rem;
+  font-style: italic;
+}
+
+.to-login-btn,
+.to-register-btn {
+  display: inline-block;
+  font-style: normal;
+  border: 1px solid var(--primary-color);
+  padding: 0 0.5rem;
+  cursor: pointer;
+  @include smallFontShadow;
+  border-radius: 2px;
+  user-select: none;
+  transform-origin: right bottom;
+}
+
+.to-login-btn:active,
+.to-register-btn:active {
+  transform: perspective(5000px) rotateX(30deg) rotateY(-17.8deg) rotateZ(10deg);
+}
+
+input.error {
+  border-color: red;
+}
+
+.login {
+  display: flex;
+}
+
+.register {
+  display: none;
+}
+
+.welcome {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+
+  video {
+    width: 80%;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px var(--primary-color);
+  }
+
+  span {
+    font-size: 3rem;
+  }
+
+  * {
+    font-size: inherit;
+  }
+}

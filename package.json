@@ -1,0 +1,15 @@
+{
+  "name": "login_register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker:build": "sudo docker compose build --build-arg ENV=prod",
+    "docker:down": "sudo docker compose down",
+    "docker:up": "sudo docker compose down && sudo docker compose up -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.2"
+}
