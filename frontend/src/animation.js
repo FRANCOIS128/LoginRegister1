@@ -15,14 +15,7 @@ class Animation {
 
     timeline.to(this.target, {
       duration: 0.5, display: "flex", opacity: 1,
-      x: 0, y: 0,
-      onComplete: () => {
-        // 为welcome页面添加特殊的show类
-        if (this.target === '.welcome' || this.target.classList?.contains('welcome')) {
-          const welcomeEl = typeof this.target === 'string' ? document.querySelector(this.target) : this.target;
-          if (welcomeEl) welcomeEl.classList.add('show');
-        }
-      }
+      x: 0, y: 0
     })
     //这一行代码会在 0.5 秒内将 this.target 元素从向下 40 像素处移动回原始位置，同时改变透明度从 0（不可见）变为 1（完全可见），并将其显示设置为 flex。
   }
@@ -36,14 +29,7 @@ class Animation {
 
     timeline.to(this.target, {
       duration: 0.5, display: "none", opacity: 0,
-      x: 0, y: -40,
-      onComplete: () => {
-        // 为welcome页面移除show类
-        if (this.target === '.welcome' || this.target.classList?.contains('welcome')) {
-          const welcomeEl = typeof this.target === 'string' ? document.querySelector(this.target) : this.target;
-          if (welcomeEl) welcomeEl.classList.remove('show');
-        }
-      }
+      x: 0, y: -40
     })
   }
 }

@@ -1,0 +1,26 @@
+# 日志文件
+*.log
+nohup.out
+serve.log
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 临时文件
+*.tmp
+*.temp
+
+# 依赖包（可选，如果不想提交可以取消注释）
+# node_modules/ 

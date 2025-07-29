@@ -57,8 +57,7 @@ async function login(event) {
       // Wait for animation to complete before loading video
       setTimeout(() => {
         // 添加防御性检查，确保页面仍然处于正确状态
-        const welcomeEl = document.querySelector('.welcome');
-        if (welcomeEl && (welcomeEl.classList.contains('show') || getComputedStyle(welcomeEl).display === 'flex')) {
+        if (document.querySelector('.welcome').style.display !== 'none') {
           videoLoader.loadVideo(videosrc)
         }
       }, 1200)
@@ -167,8 +166,7 @@ async function checkToken() {
       // Wait for animation to complete before loading video
       setTimeout(() => {
         // 添加防御性检查，确保页面仍然处于正确状态
-        const welcomeEl = document.querySelector('.welcome');
-        if (welcomeEl && (welcomeEl.classList.contains('show') || getComputedStyle(welcomeEl).display === 'flex')) {
+        if (document.querySelector('.welcome').style.display !== 'none') {
           videoLoader.loadVideo(videosrc)
         }
       }, 1200)
