@@ -54,7 +54,14 @@ async function login(event) {
       animation.showCorrect()
       animation.LoginToWelcome()
       response.token && localStorage.setItem(loginToken, response.token)
-      videoLoader.loadVideo(videosrc)
+      // Wait for animation to complete before loading video
+      setTimeout(() => {
+        // 添加防御性检查，确保页面仍然处于正确状态
+        const welcomeEl = document.querySelector('.welcome');
+        if (welcomeEl && (welcomeEl.classList.contains('show') || getComputedStyle(welcomeEl).display === 'flex')) {
+          videoLoader.loadVideo(videosrc)
+        }
+      }, 1200)
     }
   } catch (error) {
     const code = error?.response?.data?.code
@@ -157,7 +164,14 @@ async function checkToken() {
       dom.welcomeUsername.innerText = response.username
       animation.LoginToWelcome()
       response.token && localStorage.setItem(loginToken, response.token)
-      videoLoader.loadVideo(videosrc)
+      // Wait for animation to complete before loading video
+      setTimeout(() => {
+        // 添加防御性检查，确保页面仍然处于正确状态
+        const welcomeEl = document.querySelector('.welcome');
+        if (welcomeEl && (welcomeEl.classList.contains('show') || getComputedStyle(welcomeEl).display === 'flex')) {
+          videoLoader.loadVideo(videosrc)
+        }
+      }, 1200)
 
     }
   } catch (error) {

@@ -4,8 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Login & Register</title>
+  <style>
+    /* 防止页面加载时的闪烁 */
+    .welcome {
+      display: none !important;
+    }
+
+    body {
+      visibility: hidden;
+    }
+
+    body.loaded {
+      visibility: visible;
+    }
+  </style>
 </head>
 
 <body>
@@ -61,17 +75,22 @@
     <!-- Welcome -->
     <div class="welcome">
       <h1>WELCOME</h1>
-      <div class group>
+      <div class="group">
         <span id="welcome-user-name">hello</span>
         <span class="to-login-btn" id="sign-out">Sign Out</span>
       </div>
-      <video controls controlslist="nodownload" 
-             poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
-             preload="metadata"></video>
+      <video controls controlslist="nodownload" poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
+        preload="metadata"></video>
 
     </div>
   </div>
   <script type="module" src="/index.js"></script>
+  <script>
+    // 页面加载完成后显示内容，防止闪烁
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 
 </html>

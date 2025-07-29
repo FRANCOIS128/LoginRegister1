@@ -158,9 +158,23 @@ input.error {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
+  width: 100%;
+  height: 100%;
+
+  &.show {
+    display: flex;
+  }
+
+  .group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
 
   video {
-    width: 80%;
+    width: 60%;
+    max-width: 800px;
     aspect-ratio: 16/9;
     border-radius: 1rem;
     box-shadow: 10px 10px 20px var(--primary-color);
