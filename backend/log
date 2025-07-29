@@ -1,0 +1,5 @@
+
+> login_register@1.0.0 start /home/devbox/project/LoginRegister1/backend
+> node --watch index.js
+
+服务器运行在 http://localhost:9090

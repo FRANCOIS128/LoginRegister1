@@ -11,7 +11,18 @@ import { authToken } from './src/utils/authToken.js';
 
 const app = express();
 
-app.use(cors());
+// CORS 配置 - 允许前端公网域名访问
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://localhost:3000',
+    'https://tonjklcnllir.usw.sealos.io',
+    'http://tonjklcnllir.usw.sealos.io'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(bodyParser.json())
 
 app.get("/health", (req, res) => {
@@ -58,6 +69,6 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 9090;
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`服务器运行在 http://localhost:${port}`);
 })

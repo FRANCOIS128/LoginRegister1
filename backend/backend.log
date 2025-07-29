@@ -1,0 +1,11 @@
+
+> login_register@1.0.0 start /home/devbox/project/LoginRegister1/backend
+> node --watch index.js
+
+服务器运行在 http://localhost:9090
+没有token，可能是首次登录，直接继续
+prisma:query SELECT "public"."User"."id", "public"."User"."username", "public"."User"."password" FROM "public"."User" WHERE ("public"."User"."username" = $1 AND 1=1) LIMIT $2 OFFSET $3
+没有token，可能是首次登录，直接继续
+prisma:query SELECT "public"."User"."id", "public"."User"."username", "public"."User"."password" FROM "public"."User" WHERE ("public"."User"."username" = $1 AND 1=1) LIMIT $2 OFFSET $3
+Restarting 'index.js'
+服务器运行在 http://localhost:9090
